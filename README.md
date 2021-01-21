@@ -5,5 +5,5 @@ This project aims to demonstrate the integration of JavaFX framework and JDBC AP
 ## Features
 - JavaFX framework;
 - JDBC API;
-- Object orientaition programming;
+- Object orientaited programming;
 
