@@ -10,6 +10,8 @@ public class Department implements Serializable{
 	private String name;
 // constructors
 	public Department() {
+		this.id   = 0;
+		this.name = null;
 	}
 	public Department(Integer id, String name) {
 		this.id   = id;
