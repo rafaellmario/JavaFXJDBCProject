@@ -10,8 +10,6 @@ public class Department implements Serializable{
 	private String name;
 // constructors
 	public Department() {
-		this.id   = 0;
-		this.name = null;
 	}
 	public Department(Integer id, String name) {
 		this.id   = id;
@@ -40,6 +38,7 @@ public class Department implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
