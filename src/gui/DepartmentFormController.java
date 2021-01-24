@@ -77,7 +77,7 @@ public class DepartmentFormController implements Initializable{
 			Alerts.showAlert("Error Saving Object", null, e.getMessage(), AlertType.ERROR);
 		}
 		catch(ValidationException e) {
-			setErrorsMessage(e.getErrors());
+			setErrorsMessages(e.getErrors());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class DepartmentFormController implements Initializable{
 		
 		dep.setId(Utils.tryParsetoInt(this.txtId.getText()));
 		
-		if(this.txtName.getText() == null || this.txtName.getSelectedText().trim().equals(""))
+		if(this.txtName.getText() == null || this.txtName.getText().trim().equals(""))
 			exception.addError("name", "Field can't be empty");
 			
 		dep.setName(this.txtName.getText());
@@ -133,7 +133,7 @@ public class DepartmentFormController implements Initializable{
 	}
 	
 	
-	private void setErrorsMessage(Map<String,String> errors) {
+	private void setErrorsMessages(Map<String,String> errors) {
 		Set<String> fields = errors.keySet();
 		
 		if(fields.contains("name"))
