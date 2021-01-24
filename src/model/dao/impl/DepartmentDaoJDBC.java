@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import db.DbException;
+import db.DbIntegrityException;
 import db.HandleDatabase;
 import model.dao.DepartmentDao;
 import model.entities.Department;
@@ -95,7 +96,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 				throw new DbException("Invalid Id");
 		}
 		catch(SQLException e) {
-			throw new DbException(e.getMessage());
+			throw new DbIntegrityException(e.getMessage());
 		}
 		finally {
 			HandleDatabase.closeStatement(state);
